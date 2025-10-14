@@ -4,6 +4,9 @@ import Favorite from "../models/Favorite.js";
 export const getFavorites = async (req, res) => {
   try {
     const { userId } = req.params;
+    if (!userId || !mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: "Invalid or missing userId" });
+    }
     const favorites = await Favorite.find({ userId })
       .populate("recipe") // include recipe details
       .sort({ createdAt: -1 });
@@ -22,7 +25,9 @@ export const toggleFavorite = async (req, res) => {
     if (!userId || !recipeId) {
       return res.status(400).json({ message: "Missing userId or recipeId" });
     }
-
+    if (!mongoose.Types.ObjectId.isValid(userId) || !mongoose.Types.ObjectId.isValid(recipeId)) {
+      return res.status(400).json({ message: "Invalid userId or recipeId" });
+    }
     // Check if already favorited
     const existing = await Favorite.findOne({ userId, recipe: recipeId });
 
