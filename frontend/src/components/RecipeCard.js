@@ -26,8 +26,7 @@ const RecipeCard = ({ recipe, userId, isFav, setFavorites }) => {
 
       // Refresh favorites list in parent
       const favRes = await axios.get(`/api/favorites/${userId}`);
-      const favData = Array.isArray(favRes.data) ? favRes.data : [];
-      setFavorites(favData.map(f => f.recipe || f));
+      setFavorites(favRes.data.map(f => f.recipe || f));
     } catch (err) {
       console.error("Failed to toggle favorite", err);
     }
@@ -47,8 +46,9 @@ const RecipeCard = ({ recipe, userId, isFav, setFavorites }) => {
         />
         <button
           onClick={toggleFav}
-          className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-300 ${fav ? "bg-red-500 text-white" : "bg-white text-gray-600 hover:text-red-500 hover:bg-red-50"
-            }`}
+          className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-300 ${
+            fav ? "bg-red-500 text-white" : "bg-white text-gray-600 hover:text-red-500 hover:bg-red-50"
+          }`}
         >
           <Heart size={20} fill={fav ? "currentColor" : "none"} />
         </button>

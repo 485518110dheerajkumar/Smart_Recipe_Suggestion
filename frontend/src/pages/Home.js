@@ -152,7 +152,7 @@ export default function Home() {
 
         {/* Local Recipes */}
         <section className="mb-8">
-          <h2 className="c text-xl font-semibold text-gray-800 mb-4 border-b border-rose-200 pb-2">Local Recipes</h2>
+          <h2 className="dark:text-white text-xl font-semibold text-gray-800 mb-4 border-b border-rose-200 pb-2">Local Recipes</h2>
           {paginatedLocal.length ? (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {paginatedLocal.map(r => (
@@ -170,7 +170,7 @@ export default function Home() {
           {totalLocalPages > 1 && (
             <div className="flex justify-center mt-4 gap-2">
               <button onClick={prevLocalPage} disabled={localPage === 1} className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">Prev</button>
-              <span className="px-2 dark:text-white">{localPage} / {totalLocalPages}</span>
+              <span className="px-2">{localPage} / {totalLocalPages}</span>
               <button onClick={nextLocalPage} disabled={localPage === totalLocalPages} className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">Next</button>
             </div>
           )}
@@ -200,7 +200,7 @@ export default function Home() {
           {totalExternalPages > 1 && (
             <div className="flex justify-center mt-4 gap-2">
               <button onClick={prevExternalPage} disabled={externalPage === 1} className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">Prev</button>
-              <span className="px-2 dark:text-white">{externalPage} / {totalExternalPages}</span>
+              <span className="px-2">{externalPage} / {totalExternalPages}</span>
               <button onClick={nextExternalPage} disabled={externalPage === totalExternalPages} className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">Next</button>
             </div>
           )}
