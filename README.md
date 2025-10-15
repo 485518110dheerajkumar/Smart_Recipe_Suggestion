@@ -62,7 +62,7 @@ MongoDB Atlas (Cloud Database)
 
 🛠️ Setup Instructions
 1. Clone the Repository
-git clone https://github.com/<your-username>/smart-recipe-generator.git
+git clone [https://github.com/<your-username>/smart-recipe-generator.git](https://github.com/485518110dheerajkumar/Smart_Recipe_Suggestion.git)
 cd smart-recipe-generator
 
 2. Install Dependencies
@@ -81,7 +81,7 @@ FORKIFY_BASE=https://forkify-api.herokuapp.com/api/v2
 4. Run Locally
 # Start backend
 cd backend
-npm run dev
+npm start
 
 # Start frontend
 cd ../frontend
