@@ -7,8 +7,12 @@ Users can sign up, log in, rate recipes, and mark their favorites. The app suppo
 
 🚀 Live Demo
 
-Frontend + Backend (Vercel Deployment):
-🔗 https://smart-recipe-suggest.vercel.app/
+Frontend (Vercel Deployment):
+🔗 https://smart-recipe-sugges-git-0d6bae-dheeraj-kumars-projects-a90fdcd1.vercel.app/
+
+Backend (Render Deployment):
+🔗 https://smart-recipe-suggestion.onrender.com
+
 
 ⚙️ Tech Stack
 
